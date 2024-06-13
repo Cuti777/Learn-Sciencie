@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Larn sciencie</title>
+		<link rel="icon" type="image/png" href="logo.jpg">
+
+</head>
+<body>
+
+	<style>
+		*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.imgI{
+	padding: 5rem;
+}
+
+.ko{
+	width: 15rem;
+	height: 15rem;
+}
+
+.si{
+	font-size: 3rem;
+	text-align: center;
+}
+
+
+
+img {
+	width: 175px;
+	height: 175px;
+}
+
+p,li{font-size: 20px;
+	font-family: Bahnschrift}
+
+h3 {
+	font-size: 45px;
+}
+h1{
+	font-size: 57px;
+
+}
+.textP{
+	text-align: center;
+}
+
+.ret {
+	width: 60px;
+	height: 60px;
+}
+
+
+	 	#botonSubirArriba{
+			display: none;
+			position: fixed;
+			bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px ;
+            cursor: pointer;
+		}
+
+.carrusel{display:flex ;
+		 	flex-wrap: nowrap;
+		 	overflow: auto;
+		 }
+
+		 .elemento{flex: 1 0 auto;
+			margin:0 50px ;
+			width: 320px;
+			height: 320px;
+		 }
+
+		 .cu{width: 320px;
+		 	height: 320px;
+		 }
+
+		.ar{font-size: 16;
+		 	font-family: Arial;
+		 }
+
+		 .papa{
+		 	padding: 4rem;
+		 }
+
+
+
+		.offline-alert{
+   background-color: red;
+   color: white;
+   padding: 15px;
+   text-align: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 9999;
+}
+
+.online-alert{
+   background-color: green;
+   color: white;
+   padding: 15px;
+   text-align: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 9999;
+   display: none;
+}
+
+
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	transition: 0.7s;
+	padding: 30px 20px;
+	z-index: 10;
+}
+
+header.abajo{
+	background: #fff;
+	padding: 15px 20px;
+}
+
+header .logo{
+	position: relative;
+	color: #fff;
+	font-weight: bold;
+	font-size: 2em;
+	letter-spacing: 2px;
+	transition: 1.5s;
+	text-decoration: none;
+}
+
+nav{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header ul{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+header ul li{
+	list-style: none;
+}
+
+header ul li a{
+	position: relative;
+	font-family: helvetica;
+	font-size: 15px;
+	margin: 0 15px;
+	text-decoration: none;
+	color: #fff;
+	letter-spacing: 5px;
+	font-weight: 600;
+	transition: 0.7s;
+
+}
+
+.zona1{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: url(bosq.jpg);
+	background-size: cover;
+	background-position: center center;
+}
+
+.zona2{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: url(IUPAC-feature-image-1536x768.jpg);
+	background-size: cover;
+	background-position: center center;
+}
+
+header.abajo .logo,
+header.abajo ul li a{
+	color: #000;
+}
+
+header ul li a:hover {padding: 5px 10px;
+		 		background: #000;
+		 		color: #fff;
+		 		border-radius: 15px;
+
+		 	}
+
+header ul li a img{
+	width: 65px;
+	height: 65px	;
+	border-radius: 35rem;
+}
+
+.section{
+	width: 100%;
+	height: 100vh;
+	background-color:aliceblue ;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.box{
+	width: 33%;
+	height: 50vh;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+	margin: 1.5%;
+	border-radius: 7rem;
+}
+
+.box img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.box .hover{
+	width: 0%;
+	height: 50vh;
+	background-color: rgb(56, 53, 53, 0.568);
+	position: absolute;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	transition: .6s all;
+}
+
+.hover h1{
+	color: aliceblue;
+	text-shadow: 1px 1px 1px black;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+}
+
+.box:hover .hover{
+	width: 75%;
+
+}
+
+
+
+
+
+
+
+.gh{
+	padding: 2rem;
+}
+
+.gh button {
+	background-color: ;
+	width: 150px;
+	height: 35px;
+	border-radius: 5px;
+
+}
+
+.gh button:hover {
+	background-color: black;
+	color: white;
+}
+
+.pad{
+	padding: 5rem;
+}
+
+.at{
+	border-radius: 360px;
+	width: 400px;
+	height: 400px;
+	
+}
+.contenedor-acordeon{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 80px;
+}
+.contenedor-acordeon h2{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 35px;
+}
+.acordeon{
+    background: #fff;
+}
+.acordeon label{
+    display: block;
+    padding: 20px;
+    font-size: 20px;
+    background: #1c1c1c;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 2px;
+    transition: all 300ms ease;
+}
+.acordeon label:hover{
+    background: #2e2e2e;
+}
+.acordeon .contenido-acordeon{
+    padding: 0px;
+    margin: 0px 20px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 300ms ease;
+}
+.btn-acordeon:checked ~ .contenido-acordeon{
+    max-height: 600px;
+    padding: 15px 0px;
+}
+.btn-acordeon{
+    display: none;
+}
+
+.im{
+	width: 800px;
+	height: 450px;
+}
+
+footer{
+    width: 100%;
+    padding: 50px 0px;
+    background-image: url(background-footer.svg);
+    background-size: cover;
+    
+    /*background-color: #d0f0f8;
+    -webkit-mask-image: url("../Images/background-footer.svg");
+    mask-image: url("../Images/background-footer.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;*/
+}
+
+.container__footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.box__footer{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.box__footer .logo img{
+    width: 180px;
+       border-radius: 360px;
+}
+
+.box__footer .terms{
+    max-width: 350px;
+    margin-top: 20px;
+    font-weight: 500;
+    color: #7a7a7a;
+    font-size: 18px;
+}
+
+.box__footer h2{
+    margin-bottom: 30px;
+    color: #343434;
+    font-weight: 700;
+}
+
+.box__footer a{
+    margin-top: 10px;
+    color: #7a7a7a;
+    font-weight: 600;
+}
+
+.box__footer a:hover{
+    opacity: 0.8;
+}
+
+.box__footer a .fab{
+    font-size: 20px;
+}
+
+.box__copyright{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+}
+
+.box__copyright p{
+    margin-top: 20px;
+    color: #7a7a7a;
+}
+
+.box__copyright hr{
+    border: none;
+    height: 1px;
+    background-color: #7a7a7a;
+}
+
+	</style>
+
+	<script type="text/javascript" src="C:\Users\Paty\Documents\CEBETIS\lucio\Java script/fecha.js"></script>
+
+	<header>
+		<a href="#" class="logo">Learn Sciencie</a>
+		<nav>
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="#">Química</a></li>
+				<li><a href="#">Biologia</a></li>
+				<li><a href="#">Ecologia</a></li>
+				<li><a href="#">Contacto</a></li>
+				<li><a href="#"> <img src="perfil.jpg"> </a></li>
+				
+				
+			</ul>
+		</nav>
+	</header>
+	<section class="zona2">
+	
+
+
+
+	</section>
+
+	<script type="text/javascript">
+		window.addEventListener("scroll", function(){
+			var header = document.querySelector("header");
+			header.classList.toggle("abajo",window.scrollY>0);})
+	</script>
+ 	<div class="pad">
+	<h1 align="center">¿Qué es la química?</h1><br>
+	<p>La química es la ciencia que estudia la composición, estructura, propiedades y cambios de la materia. Se ocupa de las sustancias que componen los materiales del universo y de las transformaciones que estas sustancias experimentan. A continuación, se describen algunos aspectos clave de la química <br><br>
+    1. Química orgánica: Estudia los compuestos que contienen carbono, incluyendo los compuestos biológicos y los plásticos.<br><br>
+    2. Química inorgánica: Se ocupa de los compuestos que no contienen carbono, como los minerales y los metales.<br><br>
+	3. Química física: Investiga las bases físicas de los procesos químicos, incluyendo la termodinámica y la cinética química.<br><br>
+	4. Química analítica: Se centra en la identificación y cuantificación de los componentes químicos de las sustancias.<br><br>
+	5. Bioquímica: Examina las sustancias y procesos químicos que ocurren en los organismos vivos.
+ </p> <br>
+
+
+
+<br><br><br>
+    <h1 align="center">¿Qué es un átomo?</h1><br>
+	<p>Es una unidad peque de un elemento quimico que mantiene las propiedades de los elementos .Esta formadopor un  nucleo compuesto  de protones y neutrones, con electrones girando alrededor del nucleo en niveles de energia.Los atomos son los componentes basicos de la materia y se combinan para formar moleculas 
+ </p> <br><!--aqui puede ver slider donde muestre los diferentes modelos atomicos y una breve descripcion de ellos-->
+
+  <p>Al no tener la tecnologia para saber como es un átomo se crearon los modelos atomicos que se utilizan para intentar comprender como es un átomo. En este caso solo habaremos del modelo atomico de Rutherford</p>
+  	<br><br>
+  <center>
+  <img class="at" src="9631e203-e55b-4f38-97a1-0c3944e54ad7.jpeg"></img>
+  </center><br><br>
+
+  <h1 align="center">¿Por que esta formado un atomo?</h1>
+
+    <div class="contenedor-acordeon">
+
+       <div class="acordeon">
+           <input type="radio" name="acordeon" id="btn-acordeon1" class="btn-acordeon">
+           <label for="btn-acordeon1">
+               Protones
+           </label>
+           <div class="contenido-acordeon">
+               <p>Un protón es una partícula subatómica con una carga eléctrica positiva de 1 unidad fundamental positiva (1,602 × 10^-19 culombios) y una masa de 938,3 MeV/c2 (1,6726 × 10^-27 kg), o aproximadamente 1836 veces la masa de un electrón.<br><br>
+
+				Los protones se encuentran en el núcleo del átomo, junto con los neutrones. El número de protones en un átomo determina su número atómico, que es lo que identifica a un elemento químico.<br><br>
+
+				Los protones son partículas estables, lo que significa que no se desintegran espontáneamente en otras partículas. Sin embargo, pueden participar en reacciones nucleares, donde se pueden combinar o desintegrar para liberar energía.</p>
+           </div>
+       </div>
+       <div class="acordeon">
+        <input type="radio" name="acordeon" id="btn-acordeon2" class="btn-acordeon">
+        <label for="btn-acordeon2">
+            Neutrones
+        </label>
+        <div class="contenido-acordeon">
+            <p>
+			Un neutrón es una partícula subatómica sin carga eléctrica que se encuentra en el núcleo del átomo, junto con los protones.<br><br>
+
+			Al igual que los protones, los neutrones son partículas estables, lo que significa que no se desintegran espontáneamente en otras partículas. Sin embargo, al igual que los protones, pueden participar en reacciones nucleares, donde se pueden combinar o desintegrar para liberar energía.<br><br>
+
+			Los neutrones tienen una masa de 939,6 MeV/c2 (1,6749 × 10^-27 kg), que es ligeramente mayor que la masa de un protón. Esta diferencia de masa se debe a la forma en que están compuestos los neutrones y los protones.</p>
+        </div>
+    </div>
+
+    <div class="acordeon">
+        <input type="radio" name="acordeon" id="btn-acordeon3" class="btn-acordeon">
+        <label for="btn-acordeon3">
+            Electrones
+        </label>
+        <div class="contenido-acordeon">
+            <p>
+				Un electrón es una partícula subatómica con carga eléctrica negativa que orbita alrededor del núcleo del átomo. Es una de las partículas fundamentales del universo, lo que significa que no está compuesta por partículas más pequeñas.<br><br>
+
+				Los electrones tienen una masa de 9,11 × 10^-31 kg, que es aproximadamente 1/1836 veces la masa de un protón. Su carga eléctrica es de -1,602 × 10^-19 culombios.<br><br>
+
+				Los electrones se encuentran en orbitales alrededor del núcleo del átomo. Los orbitales son regiones del espacio con diferentes niveles de energía. Los electrones solo pueden ocupar orbitales con un cierto nivel de energía, y el número de electrones en un orbital determinado está limitado por el principio de Pauli.<br><br>
+
+				Los electrones son responsables de la química de los átomos. Las interacciones entre los electrones de diferentes átomos son las que determinan cómo se unen los átomos para formar moléculas y compuestos. Los electrones también son responsables de la electricidad y el magnetismo. El flujo de electrones a través de un conductor es lo que produce la corriente eléctrica, y el movimiento de los electrones alrededor del núcleo del átomo es lo que crea el campo magnético de un átomo.<br><br>
+
+				Los electrones son partículas fundamentales que juegan un papel crucial en la estructura de la materia y en muchos fenómenos físicos y químicos. Su estudio ha sido fundamental para el desarrollo de la física y la química modernas.</p>
+        </div>
+    </div>
+   
+   </div><br><br>
+
+   <h1 align="center" >Estructura</h1>
+   <p>
+	El modelo atómico de Rutherford, también conocido como modelo nuclear, fue propuesto por el físico neozelandés Ernest Rutherford en 1911. Este modelo revolucionó nuestra comprensión del átomo y sentó las bases para la física moderna.<br><br>
+
+	Los puntos clave del modelo atómico de Rutherford son:<br><br>
+
+	El átomo tiene un núcleo central pequeño y denso que contiene la mayor parte de la masa y toda la carga positiva del átomo. Este núcleo está formado por protones y neutrones.<br>
+	Los electrones, que son partículas con carga negativa, orbitan alrededor del núcleo en regiones llamadas orbitales. Los orbitales están definidos por diferentes niveles de energía, y los electrones solo pueden ocupar orbitales con un cierto nivel de energía.<br>
+	El átomo está compuesto en su mayor parte por espacio vacío. El núcleo es extremadamente pequeño en comparación con el tamaño total del átomo. Los electrones orbitan a grandes distancias del núcleo, lo que significa que el átomo es en su mayor parte espacio vacío.</p><br><br>
+
+	<center>
+	<img class="im" src="electron.jpg"></img>
+	</center></div>
+
+	<footer>
+
+        <div class="container__footer">
+            <div class="box__footer">
+                <div class="logo">
+                    <img src="logo.jpg" alt="">
+                </div>
+                <div class="terms">
+                    <p>el principal objetivo de esta pagina es que el usuario pueda ayudarse de los conocimientos que le brindamos acerca de quimica, biologia y ecologia para que le facilite sus estudios</p>
+                </div>
+            </div>
+           
+
+            <div class="box__footer">
+                <h2>Redes Sociales</h2>
+                <a href="https://www.instagram.com/lui_.hdz?igsh=YXJ1cmRwZTVtbGFz"><i class="fab fa-twitter-square"></i> Insagram</a>
+                <a href="https://www.instagram.com/cuauthi_silva/?utm_source=qr&r=nametag"><i class="fab fa-linkedin"></i> Instagram</a>
+                <a href="https://www.instagram.com/anahi_sh_"><i class="fab fa-instagram-square"></i> Instagram</a>
+            </div>
+
+        </div>
+
+        <div class="box__copyright">
+            <hr>
+            <p>Todos los derechos reservados © 2021 <b>MagtimusPro</b></p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    <button onclick="subirArriba()" id="botonSubirArriba" title="Subir arriba">l</button>
+<script>
+		//obtener el boton de subir arriba 
+		const botonSubirArriba =document.getElementById("botonSubirArriba");
+        //Mostrar el boton cuando se desplaza hacia abajo 
+		window.onscroll =function(){
+			mostrarBotonSubirArriba();
+		} ;
+		function mostrarBotonSubirArriba(){
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ) { botonSubirArriba.style.display = "block";
+			} else{
+				botonSubirArriba.style.display = "none";
+			}
+		}
+		//funcion para subir arriba cuando se hace clic en el boton 
+		function subirArriba(){
+			document.body.scrollTop =0; //para safary
+			document.documentElement.scrollTop =0; //Para chrome, firefox, IE Y OPERA
+		}
+	</script>
+</body>
+</html>
+

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Larn sciencie</title>
+	
+	<link rel="icon" type="image/png" href="logo.jpg">
+
+</head>
+<body>
+
+	<style>
+		*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.imgI{
+	padding: 5rem;
+}
+
+.ko{
+	width: 15rem;
+	height: 15rem;
+}
+
+.si{
+	font-size: 3rem;
+	text-align: center;
+}
+
+
+
+img {
+	width: 175px;
+	height: 175px;
+}
+
+p,li{font-size: 20px;
+	font-family: Bahnschrift}
+
+h3 {
+	font-size: 45px;
+}
+h1{
+	font-size: 57px;
+
+}
+.textP{
+	text-align: center;
+}
+
+.ret {
+	width: 60px;
+	height: 60px;
+}
+
+
+	 	#botonSubirArriba{
+			display: none;
+			position: fixed;
+			bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px ;
+            cursor: pointer;
+		}
+
+.carrusel{display:flex ;
+		 	flex-wrap: nowrap;
+		 	overflow: auto;
+		 }
+
+		 .elemento{flex: 1 0 auto;
+			margin:0 50px ;
+			width: 320px;
+			height: 320px;
+		 }
+
+		 .cu{width: 320px;
+		 	height: 320px;
+		 }
+
+		.ar{font-size: 16;
+		 	font-family: Arial;
+		 }
+
+		 .papa{
+		 	padding: 4rem;
+		 }
+
+
+
+		.offline-alert{
+   background-color: red;
+   color: white;
+   padding: 15px;
+   text-align: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 9999;
+}
+
+.online-alert{
+   background-color: green;
+   color: white;
+   padding: 15px;
+   text-align: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 9999;
+   display: none;
+}
+
+
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	transition: 0.7s;
+	padding: 30px 20px;
+	z-index: 10;
+}
+
+header.abajo{
+	background: #fff;
+	padding: 15px 20px;
+}
+
+header .logo{
+	position: relative;
+	color: #fff;
+	font-weight: bold;
+	font-size: 2em;
+	letter-spacing: 2px;
+	transition: 1.5s;
+	text-decoration: none;
+}
+
+nav{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header ul{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+header ul li{
+	list-style: none;
+}
+
+header ul li a{
+	position: relative;
+	font-family: helvetica;
+	font-size: 15px;
+	margin: 0 15px;
+	text-decoration: none;
+	color: #fff;
+	letter-spacing: 5px;
+	font-weight: 600;
+	transition: 0.7s;
+
+}
+
+.zona1{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: url(bosq.jpg);
+	background-size: cover;
+	background-position: center center;
+}
+
+.zona2{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: url(qui.jpg);
+	background-size: cover;
+	background-position: center center;
+}
+
+header.abajo .logo,
+header.abajo ul li a{
+	color: #000;
+}
+
+header ul li a:hover {padding: 5px 10px;
+		 		background: #000;
+		 		color: #fff;
+		 		border-radius: 15px;
+
+		 	}
+
+header ul li a img{
+	width: 65px;
+	height: 65px	;
+	border-radius: 35rem;
+}
+
+.section{
+	width: 100%;
+	height: 100vh;
+	background-color: ;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.box{
+	width: 33%;
+	height: 50vh;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+	margin: 1.5%;
+	border-radius: 7rem;
+}
+
+.box img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.box .hover{
+	width: 0%;
+	height: 50vh;
+	background-color: rgb(56, 53, 53, 0.568);
+	position: absolute;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	transition: .6s all;
+}
+
+.hover h1{
+	color: aliceblue;
+	text-shadow: 1px 1px 1px black;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+}
+
+.box:hover .hover{
+	width: 75%;
+
+}
+
+
+.gh{
+	padding: 2rem;
+}
+
+.gh button {
+	background-color: ;
+	width: 150px;
+	height: 35px;
+	border-radius: 5px;
+
+}
+
+.gh button:hover {
+	background-color: black;
+	color: white;
+}
+
+.pad{
+	padding: 5rem;
+}
+
+footer{
+    width: 100%;
+    padding: 50px 0px;
+    background-image: url(background-footer.svg);
+    background-size: cover;
+    
+    /*background-color: #d0f0f8;
+    -webkit-mask-image: url("../Images/background-footer.svg");
+    mask-image: url("../Images/background-footer.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;*/
+}
+
+.container__footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.box__footer{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.box__footer .logo img{
+    width: 180px;
+    border-radius: 360px;
+}
+
+.box__footer .terms{
+    max-width: 350px;
+    margin-top: 20px;
+    font-weight: 500;
+    color: #7a7a7a;
+    font-size: 18px;
+}
+
+.box__footer h2{
+    margin-bottom: 30px;
+    color: #343434;
+    font-weight: 700;
+}
+
+.box__footer a{
+    margin-top: 10px;
+    color: #7a7a7a;
+    font-weight: 600;
+}
+
+.box__footer a:hover{
+    opacity: 0.8;
+}
+
+.box__footer a .fab{
+    font-size: 20px;
+}
+
+.box__copyright{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+}
+
+.box__copyright p{
+    margin-top: 20px;
+    color: #7a7a7a;
+}
+
+.box__copyright hr{
+    border: none;
+    height: 1px;
+    background-color: #7a7a7a;
+}
+
+
+	</style>
+
+
+
+
+	<header>
+		<a href="#" class="logo">Learn Sciencie</a>
+		<nav>
+			<ul>
+				<li><a href="#">Inicio</a></li>
+				<li><a href="quimica.html">Química</a></li>
+				<li><a href="#">Biologia</a></li>
+				<li><a href="#">Ecologia</a></li>
+				<li><a href="#">Contacto</a></li>
+				<li><a href="#"> <img src="perfil.jpg"> </a></li>	
+			</ul>
+		</nav>
+	</header>
+	<section class="zona1">
+	
+	</section>
+
+	<script type="text/javascript">
+		window.addEventListener("scroll", function(){
+			var header = document.querySelector("header");
+			header.classList.toggle("abajo",window.scrollY>0);
+
+		})
+	</script>
+
+ 	<div class="pad">
+
+	<h1 align="center">¿Qué son las ciencias naturales?</h1><br>
+	<p>Son un conjunto de disiplinas que se dedican al estudio de los fenomenos naturales, como la fisica, la quimica, la biologia, la geologia y la astronomía. estas disiplinas buscan comprender cómo funcionan los componentes del universo y cómo interactúan entres sí, através de la observación, experimentación y análisis. <br><br>
+	La ciencia está presente en nuestra vida diaria de muchas maneras. Por ejemplo, la tecnología que utilizamos, como los teléfonos inteligentes, las computadoras y los electrodomésticos, se basa en descubrimientos científicos. La medicina y la salud se benefician de avances científicos que han permitido el desarrollo de tratamientos más efectivos y la prevención de enfermedades. Además, la producción de alimentos, el diseño de edificios seguros, la generación de energía sostenible y la comprensión del cambio climático son solo algunos ejemplos de cómo la ciencia influye en nuestro día a día. La ciencia nos ayuda a entender el mundo que nos rodea y a mejorar nuestra calidad de vida.  </p> <br>
+
+	 <br><br><br>
+
+	</div>
+
+		<h3 class="si">Sitios mas visitados</h3>
+<div class="section">
+			<div class="box">
+				<a href="quimica.html"> <img src="Mbe Estilo Mbe Química Louças Químicas PNG , Clipart De Química, Porcelana, Ware Mbe Imagem PNG e Vetor Para Download Gratuito.jpeg"></a>
+				<div class="hover">
+					<h1>Quimica</h1>
+				</div>
+			</div>
+
+			<div class="box">
+				<a href="bio.html"> <img src="Perché-studiare-Biologia-BLOG-Facebook-1080x628.png"></a>
+				<div class="hover">
+					<h1>Biologia</h1>
+				</div>
+			</div>
+                <div class="box">
+				<a href="ECO.html"> <img src="Ecología_personal_un_concepto_para_practicar_en_el_hogar_1.png"></a>
+				<div class="hover">
+					<h1>Ecologia</h1>
+				</div>
+			</div>
+
+		</div>
+
+
+    <footer>
+
+        <div class="container__footer">
+            <div class="box__footer">
+                <div class="logo">
+                    <img src="logo.jpg" alt="">
+                </div>
+                <div class="terms">
+                    <p>el principal objetivo de esta pagina es que el usuario pueda ayudarse de los conocimientos que le brindamos acerca de quimica, biologia y ecologia para que le facilite sus estudios</p>
+                </div>
+            </div>
+           
+
+            <div class="box__footer">
+                <h2>Redes Sociales</h2>
+                <a href="https://www.instagram.com/lui_.hdz?igsh=YXJ1cmRwZTVtbGFz"><i class="fab fa-twitter-square"></i> Insagram</a>
+                <a href="https://www.instagram.com/cuauthi_silva/?utm_source=qr&r=nametag"><i class="fab fa-linkedin"></i> Instagram</a>
+                <a href="https://www.instagram.com/anahi_sh_"><i class="fab fa-instagram-square"></i> Instagram</a>
+            </div>
+
+        </div>
+
+        <div class="box__copyright">
+            <hr>
+            <p>Todos los derechos reservados © 2021 <b>MagtimusPro</b></p>
+        </div>
+    </footer>
+
+
+
+       <button onclick="subirArriba()" id="botonSubirArriba" title="Subir arriba">l</button>
+
+	<script>
+		//obtener el boton de subir arriba 
+		const botonSubirArriba =document.getElementById("botonSubirArriba");
+
+		//Mostrar el boton cuando se desplaza hacia abajo 
+		window.onscroll =function(){
+			mostrarBotonSubirArriba();
+		} ;
+		function mostrarBotonSubirArriba(){
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ) { botonSubirArriba.style.display = "block";
+			} else{
+				botonSubirArriba.style.display = "none";
+			}
+		}
+
+		//funcion para subir arriba cuando se hace clic en el boton 
+		function subirArriba(){
+			document.body.scrollTop =0; //para safary
+			document.documentElement.scrollTop =0; //Para chrome, firefox, IE Y OPERA
+		}
+	</script>
+</body>
+</html>
